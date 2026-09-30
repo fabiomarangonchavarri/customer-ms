@@ -2,10 +2,7 @@ FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /deployments
 
-COPY target/quarkus-app/lib/ lib/
-COPY target/quarkus-app/*.jar ./
-COPY target/quarkus-app/app/ app/
-COPY target/quarkus-app/quarkus/ quarkus/
+COPY target/quarkus-app/ ./
 
 EXPOSE 8080
 
