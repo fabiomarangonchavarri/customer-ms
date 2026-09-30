@@ -1,0 +1,32 @@
+quarkus:
+  application:
+    name: customer-ms
+
+  http:
+    port: 8080
+    host: 0.0.0.0
+
+  jackson:
+    write-dates-as-timestamps: false
+
+cosmos:
+  endpoint: ${COSMOS_ENDPOINT}
+  key: ${COSMOS_KEY}
+  database: Bank
+  containers:
+    customers: Customers
+    accounts: Accounts
+    exchangeRates: ExchangeRates
+    cards: Cards
+    sampleContainer: SampleContainer
+    usersContainer: UsersContainer
+
+jwt:
+  public-key: ${JWT_PUBLIC_KEY}
+  private-key: ${JWT_PRIVATE_KEY}
+
+mp:
+  jwt:
+    verify:
+      publickey: ${JWT_PUBLIC_KEY}
+      issuer: banking-auth
